@@ -20,6 +20,7 @@
   /* Prevent artifacts in Mozilla Firefox: */
   -moz-backface-visibility: hidden;
 }
+
 .blueimp-gallery > .slides > .slide > .slide-content {
   margin: auto;
   width: auto;
