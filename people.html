@@ -3,10 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>El-Samad Lab Website</title>
+<meta name="description" content="blueimp Gallery is a touch-enabled, responsive and customizable image and video gallery, carousel and lightbox, optimized for both mobile and desktop web browsers. It features swipe, mouse and keyboard navigation, transition effects, slideshow functionality, fullscreen support and on-demand content loading and can be extended to display additional content types.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" href="css/blueimp-gallery.min.css">
+<link rel="stylesheet" href="css/blueimp-gallery-indicator.css">
+<link rel="stylesheet" href="css/blueimp-gallery-video.css">
+
+<link rel="stylesheet" href="css/bootstrap-image-gallery.min.css" />
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+<!-- <script src="js/jquery.blueimp-gallery.min.js"></script> -->
+
 <style type="text/css">
     .bs-example{
     	margin: 20px;
@@ -44,28 +57,70 @@
 	<div class = "row">
 		<div class="col-xs-12" style="height:20px;"></div>
 	</div>
+
+<!-- Bootstrap Image Gallery Popup Light Box -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- Modal Box Container -->
+    <div class="slides"></div>
+    <!-- Lightbox Controls -->
+    <h3 class="title"></h3>
+
+<!--     <a class="prev">‹</a>
+    <a class="next">›</a> -->
+    <a class="close">×</a>
+<!--     <a class="play-pause"></a> -->
+    <ol class="indicator"></ol>
+    <!-- Modal Box -->
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">X</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class = "row">
+                    <div class="col-xs-12" style="height:20px;"></div>
+                </div>
+                <div class="modal-body"></div>
+                <div class = "row">
+                    <div class="col-xs-12" style="height:20px;"></div>
+                </div>
+                <div class="modal-footer">
+                   <!--  <button type="button" class="btn btn-default pull-left prev">
+                    <i class="glyphicon glyphicon-chevron-left"></i> Prev
+                    </button>
+                    <button type="button" class="btn btn-default next">Next
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 	
 	<!-- section -->
-	<ul class="row">
+	<div class="row">
 	
 		<div class="col-md-4 portfolio-item"><a href="http://profiles.ucsf.edu/hana.el-samad">
 			<img class="image-responsive" src="img/hana.jpg" width="250" height="300"></a>
 			<div class="col-md-offset-2">
 			<h4>Hana El-Samad</h4>
-            <p>Principle Investigator</p>
+            <p>Principal Investigator</p>
             </div>
 		</div>
 		
-		<div class="col-md-4 portfolio-item">
-			<img class="image-responsive" src="img/mike.jpg" width="250" height="300"> 
+		<div class="col-md-4 portfolio-item"><a href="/Users/alain/Documents/GitHub/elsamad_website_syc/img/sax-gandalf.gif" data-gallery>
+            <img src="img/mike.jpg" alt="cheese1" class="img-responsive" width="250" height="300" /></a>    
 			<div class="col-md-offset-2">
 			<h4>Mike Chevalier</h4>
             <p>Research Associate</p>
             </div>
 		</div>
 		
-		<div class="col-md-4 portfolio-item">
-			<img class="image-responsive" src="img/raj.jpg" width="250" height="300">
+		<div class="col-md-4 portfolio-item"><a href="/Users/alain/Documents/GitHub/elsamad_website_syc/img/sax-gandalf.gif" data-gallery>
+            <img src="img/raj.jpg" alt="cheese1" class="img-responsive" width="250" height="300" /></a>    
 			<div class="col-md-offset-2">
 			<h4>Raj Bhatnagar</h4>
 			</div>
@@ -73,9 +128,13 @@
             <p>Postdoc</p>
             </div>
 		</div>
-			
-		<div class="col-md-4 portfolio-item">
-			<img class="image-responsive" src="img/joao.jpg" width="250" height="300"> 
+    </div>
+    <br>
+    <div class="row">
+		<div class="col-lg-4 portfolio-item">
+            <a href="/Users/alain/Documents/GitHub/elsamad_website_syc/img/joao_bio.png" data-gallery>
+                <img src="img/joao.jpg" alt="cheese1" class="img-responsive" width="250" height="300" />
+            </a>    
 			<div class="col-md-offset-2">
 			<h4>Joao Fonseca</h4>
 			</div>
@@ -84,8 +143,10 @@
             </div>
 		</div>
 	
-		<div class="col-lg-4 col-md-4 col-xs-6 thumb">
-			<img src="img/alain.jpg" width="250" height="300"> 
+		<div class="col-lg-4 portfolio-item">
+		    <a href="/Users/alain/Documents/GitHub/elsamad_website_syc/img/alain_bio.png" data-gallery>
+                <img src="img/alain.jpg" alt="cheese1" class="img-responsive" width="250" height="300" />
+            </a>  
 			<div class="col-md-offset-2">
 			<h4>Alain Bonny</h4>
             <p>Graduate Student</p>
@@ -93,15 +154,21 @@
 		</div>
 		
 		<div class="col-md-4 portfolio-item">
-			<img src="img/susan.jpg" width="250" height="300"> 
+			<a href="/Users/alain/Documents/GitHub/elsamad_website_syc/img/susan_bio.png" data-gallery>
+                <img src="img/susan.jpg" alt="cheese1" class="img-responsive" width="250" height="300" />
+            </a>    
 			<div class="col-md-offset-2">
 			<h4>Susan Chen</h4>
             <p>Graduate Student</p>
             </div>
 		</div>
-		
-		<div class="col-md-4 portfolio-item"><a href="http://2009.igem.org/File:PatHarrigan.jpg">
-			<img src="img/patrick.jpg" width="250" height="300"></a> 
+	</div>
+    <br>
+    <div class="row">
+		<div class="col-md-4 portfolio-item">
+            <a href="/Users/alain/Documents/GitHub/elsamad_website_syc/img/sax-gandalf.gif" data-gallery>
+                <img src="img/patrick.jpg" alt="cheese1" class="img-responsive" width="250" height="300" />
+            </a>    
 			<div class="col-md-offset-2">
 			<h4>Patrick Harrigan</h4>
             <p>Graduate Student</p>
@@ -109,7 +176,9 @@
 		</div>
 		
 		<div class="col-md-4 portfolio-item">
-			<img src="img/graham.png" width="250" height="300"> 
+			<a href="/Users/alain/Documents/GitHub/elsamad_website_syc/img/sax-gandalf.gif" data-gallery>
+                <img src="img/graham.png" alt="cheese1" class="img-responsive" width="250" height="300" />
+            </a>  
 			<div class="col-md-offset-2">
 			<h4>Graham Heimberg</h4>
             <p>Graduate Student</p>
@@ -117,7 +186,9 @@
 		</div>
 		
 		<div class="col-md-4 portfolio-item">
-			<img src="img/ben.png" width="250" height="300"> 
+			<a href="/Users/alain/Documents/GitHub/elsamad_website_syc/img/sax-gandalf.gif" data-gallery>
+                <img src="img/ben.png" alt="cheese1" class="img-responsive" width="250" height="300" />
+            </a>  
 			<div class="col-md-offset-2">
 			<h4>Benjamin Heineike</h4>
 			</div>
@@ -125,17 +196,24 @@
             <p>Graduate Student</p>
             </div>
 		</div>
-		
-		<div class="col-md-4 portfolio-item">
-			<img src="img/kieran.jpg" width="250" height="300"> 
+    </div>
+	<br>
+    <div class="row">	
+		<div class="col-lg-4 portfolio-item">
+			<a href="/Users/alain/Documents/GitHub/elsamad_website_syc/img/kieran_bio.png" data-gallery>
+                <img src="img/kieran.jpg" alt="cheese1" class="img-responsive" width="250" height="300" />
+            </a>  
 			<div class="col-md-offset-2">
 			<h4>Kieran Mace</h4>
             <p>Graduate Student</p>
             </div>
 		</div>
 		
-		<div class="col-md-4 portfolio-item">
-			<img src="img/andrew.jpg" width="250" height="300"> 
+		<div class="col-lg-4 portfolio-item">
+            <a href="/Users/alain/Documents/GitHub/elsamad_website_syc/img/andrew_bio.png" data-gallery>
+                <img src="img/andrew.jpg" alt="cheese1" class="img-responsive" width="250" height="500" />
+            </a>    
+			
 			<div class="col-md-offset-2">
 			<h4>Andrew Prokop</h4>
 			</div>
@@ -145,7 +223,9 @@
 		</div>
 		
 		<div class="col-md-4 portfolio-item">
-			<img src="img/jordi.jpg" width="250" height="300"> 
+			<a href="/Users/alain/Documents/GitHub/elsamad_website_syc/img/sax-gandalf.gif" data-gallery>
+                <img src="img/jordi.jpg" alt="cheese1" class="img-responsive" width="250" height="300" />
+            </a>  
 			<div class="col-md-offset-2">
 			<h4>Jordi Silvestre-Ryan</h4>
 			</div>
@@ -153,6 +233,8 @@
             <p>Graduate Student</p>
             </div>
 		</div>
+    </div>
+    <br>
 	</ul>
 	
 	<hr>
@@ -172,6 +254,12 @@
             <tr>
                 <td>Lindsey Osimiri</td>
                 <td>UCB-UCSF Bioengineering</td>
+            </tr>
+        </tbody>
+         <tbody>
+            <tr>
+                <td>Daniel Asarnow</td>
+                <td>iPQB Bioinformatics</td>
             </tr>
         </tbody>
         <tbody>
@@ -200,6 +288,9 @@
                 <td>Lab Technician</td>
                 <td></td>
             </tr>
+            <td>Eric Wong</td>
+                <td>Summer Undergrad Intern</td>
+                <td></td>
             <tr>
                 <td>Ignacio Zuleta</td>
                 <td>Postdoc</td>
@@ -267,5 +358,15 @@
 </div>
 
 </div>
+<script src="js/jquery-1.11.2.min.js"></script>
+    <!-- load bootstrap javascript library -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- load blueimp image gallery javascript library -->
+    <script src="js/jquery.blueimp-gallery.min.js"></script>
+
+    <!-- load bootstrap image gallery javascript library -->
+    <script src="js/bootstrap-image-gallery.min.js"></script>
+
+
 </body>
 </html>                                		
